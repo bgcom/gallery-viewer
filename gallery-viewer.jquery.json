@@ -1,0 +1,32 @@
+{
+  "name": "gallery-viewer",
+  "title": "Gallery Viewer",
+  "description": "A slideshow with zoom that is flexible to whatever data you want to put in.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bgcom/gallery-viewer",
+  "author": {
+    "name": "BGcom",
+    "email": "digital@bgcom.ch",
+    "url": "http://www.bgcom.ch/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bgcom/gallery-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bgcom/gallery-viewer/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bgcom/gallery-viewer/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7",
+    "jquery-ui": ">= 1.8",
+    "Handlebars": ">= 1.0.beta.6",
+    "History": ">= Unknown"
+  },
+  "keywords": []
+}
