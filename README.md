@@ -12,12 +12,57 @@ In your web page:
 
 ```html
 <script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="handlebars.js"></script>
+<script src="history.js"></script>
 <script src="dist/gallery-viewer.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $("#gallery-viewer").galleryViewer({
+    // content of the template
+    template: $("#galleryViewer-template").html(),
+    // handler when the image is displayed
+    imageDisplayed: function (e, ui) {
+        console.log("I changed element");
+    }
 });
 </script>
+<ul class="galleryViewer-ThumbnailList">
+    <li class="galleryViewer-ThumbnailContainer">
+        <a href="" class="galleryViewer-ThumbnailLink" key="element1" 
+           data='{"text": "foo"}'>
+           See element1
+        </a>
+    </li>
+    <li class="galleryViewer-ThumbnailContainer">
+        <a href="" class="galleryViewer-ThumbnailLink" key="element2" 
+           data='{"text": "bar"}'>
+           See element2
+        </a>
+    </li>
+</ul>
+<div id="gallery-viewer"></div>
+<script id="galleryViewer-template" type="text/template">
+        <div class="galleryViewer-main box">
+            <div class="galleryViewer-main-container">
+                <div class="galleryViewer-photo-container">
+                    <p> {{elem.text}} </p>
+                    <button type="button" class="galleryViewer-previous"></button>
+                    <button type="button" class="galleryViewer-next"></button>
+                    <div class="galleryViewer-zoom-container">
+                        <button type="button" class="galleryViewer-zoomOut"></button>
+                        <button type="button" class="galleryViewer-zoomIn"></button>
+                    </div>
+                </div>
+                <div class="galleryViewer-side-container box grey">
+                    <button type="button" class="galleryViewer-close"></button>
+                    <div class="content">
+                         Element number: {{elem.index}} / {{totalElements}})
+                    </div>
+                </div>
+            </div>
+        </div>
+</script>  
 ```
 
 ## Documentation
